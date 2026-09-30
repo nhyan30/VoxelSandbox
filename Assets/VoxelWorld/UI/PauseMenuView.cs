@@ -90,7 +90,7 @@ namespace VoxelWorld.UI
             var text = UiFactory.CreateText(_controlsGroup.transform, "ControlsText", controlsText, 17,
                 TextAnchor.UpperCenter, new Color(0.92f, 0.94f, 0.98f));
             UiFactory.SetAnchor(text.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
-                Vector2.one * 0.5f, new Vector2(0f, 20f), new Vector2(440f, 400f));
+                Vector2.one * 0.5f, new Vector2(0f, -20f), new Vector2(440f, 400f));
 
             var back = UiFactory.CreateButton(_controlsGroup.transform, "Button_Back", "Back",
                 new Vector2(0f, -196f), new Vector2(200f, 42f));
