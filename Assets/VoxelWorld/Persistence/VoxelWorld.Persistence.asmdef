@@ -1,0 +1,16 @@
+{
+    "name": "VoxelWorld.Persistence",
+    "rootNamespace": "VoxelWorld.Persistence",
+    "references": [
+        "VoxelWorld.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

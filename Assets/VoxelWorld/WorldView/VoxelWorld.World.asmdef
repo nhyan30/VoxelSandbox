@@ -1,0 +1,16 @@
+{
+    "name": "VoxelWorld.World",
+    "rootNamespace": "VoxelWorld.World",
+    "references": [
+        "VoxelWorld.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
