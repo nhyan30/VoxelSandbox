@@ -248,6 +248,8 @@ namespace VoxelWorld.App
             camera.nearClipPlane = 0.1f;
             camera.farClipPlane = 400f;
             camera.clearFlags = CameraClearFlags.Skybox;
+            // Solid fallback shown if the procedural skybox shader is unavailable.
+            camera.backgroundColor = config.SkyColor;
             camera.tag = "MainCamera";
 
             var size = _grid.Size;
@@ -319,7 +321,18 @@ namespace VoxelWorld.App
             RenderSettings.fogStartDistance = config.LoadRadius * config.ChunkSize * 0.5f;
             RenderSettings.fogEndDistance = Mathf.Max(10f, config.LoadRadius * config.ChunkSize - 2f);
             RenderSettings.fogColor = config.SkyColor;
-            RenderSettings.skybox = new Material(Shader.Find("Skybox/Procedural"));
+            var skyboxShader = Shader.Find("Skybox/Procedural");
+            if (skyboxShader != null)
+            {
+                RenderSettings.skybox = new Material(skyboxShader);
+            }
+            else
+            {
+                // Never let a stripped shader abort Awake: without a camera the build
+                // boots to a bare gray window. The solid background color covers this.
+                Debug.LogWarning("[VoxelSandbox] 'Skybox/Procedural' is unavailable in this build; " +
+                                 "falling back to a solid sky color.");
+            }
         }
 
         private static void LockCursor(bool locked)
